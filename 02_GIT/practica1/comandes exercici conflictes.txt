@@ -1,0 +1,15 @@
+1. git branch -a per veure totes les branques que hi ha al repositori
+2. git checkout practica01 per connectar-nos a la branca indicada
+3. git commit per actualitzar al local els fixers 1, 2 i 3
+4. git status per veure el estat dels arxius
+5. git branch practica1_ribasromeu_bernat per crear una nova branca
+6. git checkout per connectar-nos a la nova branca
+7. git add i git commit fer afegir al repositori local un arxiu nou
+8. git push per enviar els arxius al repositori remot
+9. git remote rm origin per desconnectar-nos del repositori remot
+10. git remote add origin "link" per connectar-nos al nou repositori remot
+11. git branch -M main per modificar el nom de la branca principal
+12. git push -u origin main per fer el push dels arxius al remot
+13. git checkout per connectar-nos a practica01
+14. git merge practica1_ribasromeu_bernat per combinar les dues branques pero no es pot fer perque la branca practica1_ribasromeu_bernat no existeix en aquest
+repositori
