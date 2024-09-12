@@ -1,0 +1,68 @@
+/**Seleccionem tots els elements*/
+* {
+    
+}
+/**Seleccionem els elements p*/
+p {
+    
+}
+/**Seleccionem la id title-1*/
+#title-1{
+    
+}
+/**Seleccionem els elements amb la classe bg-yellow*/
+.bg-yellow{
+    
+}
+/**Seleccionem tots els elements amb el atribut ID*/
+[id]{
+    
+}
+/**Seleccionem els elements amb el atribut ID i el valor title-1*/
+[id=title-1]{
+    
+}
+/**Seleccionem tots els atributs href amb el link de yahoo*/
+[href="https://www.yahoo.com"]{
+    
+}
+/**Selecionem els atributs class que comencin per title*/
+[class^="title"]{
+    
+}
+/**Seleccionem tots els atributs href que acabin amb .com*/
+[href$=".com"]{
+    
+}
+/**Seleccionem totes les class amb un valor title-1, title-2,etc.*/
+[class|="title"]{
+    
+}
+/**Seleccionem els atrbuts href que continguin 127*/
+[href*="127"]{
+    
+}
+/**Seleccionem tots els atributs href que comencin per https*/
+[href^="http"]{
+    
+}
+/**Seleccionem tots els elements a, p i h1 en una sola linea*/
+a, p, h1{
+    
+}
+/**Seleccionem tots els elements de main i p*/
+main, p{
+    
+}
+/**Seleccionem el seguent element germa de h1*/
+h1 + *{
+    
+}
+/**Seleccionem tots els elements que siguin germans de h1*/
+h1 ~ *{
+    
+}
+/**Seleccionem tots els elements fills de main*/
+main *{
+    
+}
