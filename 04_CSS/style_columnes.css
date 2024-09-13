@@ -1,0 +1,18 @@
+body{
+    background-color: bisque;
+    color: red;
+}
+p{
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 2px solid red;
+}
+h1:hover{
+    color: lightgreen;
+    cursor: pointer;
+    
+}
+.purple::selection{
+    background-color: purple;
+    color: white;
+}
