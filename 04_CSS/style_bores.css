@@ -3,4 +3,6 @@ body {
     border-right: 10px dashed blue;
     border-bottom: 10px solid red;
     border-left:  10px double black;
+    margin: 100px;
+    padding: 30px 41px 40px;
 }
