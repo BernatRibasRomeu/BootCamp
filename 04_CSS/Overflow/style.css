@@ -1,0 +1,7 @@
+div{
+    background-color: lightgreen;
+    height: 200px;
+    width: 200px;
+    /*!overflow: hidden; aqui controlem que el contingut fora de mida estigui ocult.*/
+    overflow-y: auto;
+}
