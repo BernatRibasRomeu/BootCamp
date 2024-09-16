@@ -1,0 +1,9 @@
+div{
+    background-color: red;
+    outline: 5px yellowgreen dotted;
+    display: inline;
+    margin: 20px;
+}
+.hover:hover{
+    outline: 5px black dotted;
+}
