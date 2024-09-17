@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+}
+
+.color-1 {
+    background-color: rgb(238, 181, 76);
+    border: solid 1px white;
+    box-sizing: border-box;
+    height: 6vh;
+}
+
+.color-2 {
+    background-color: yellowgreen;
+    border: solid 1px white;
+    box-sizing: border-box;
+    height: 10vh;
+}
+
+.color-3 {
+    background-color: rgb(33, 142, 179);
+    border: solid 1px white;
+    box-sizing: border-box;
+    height: 18vh;
+}
+
+.color-4 {
+    background-color: grey;
+    border: solid 1px white;
+    box-sizing: border-box;
+    height: 6vh;
+}
+
+@media (150px < width < 300px) {
+    body {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #float1 {
+        float: left;
+        width: 50%;
+        height: 8vh;
+    }
+
+    #float2 {
+        float: right;
+        width: 50%;
+        height: 8vh;
+    }
+
+    #float3 {
+        float: left;
+        width: 50%;
+        height: 8vh;
+    }
+
+    #float4 {
+        float: right;
+        width: 50%;
+        height: 8vh;
+    }
+    #float5{
+        height: 6vh;
+    }
+    #float6{
+        height: 6vh;
+    }
+    #float7{
+        height: 36vh;
+    }
+    #float8{
+        height: 12vh;
+    }
+    #float9{
+        height: 12vh;
+    }
+    #float10{
+        height: 12vh;
+    }
+}
+
+@media (300px < width) {
+    body {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #float1 {
+        clear: both;
+        float: left;
+        width: 25%;
+        height: 10vh;
+    }
+
+    #float2 {
+        float: right;
+        width: 25%;
+        height: 10vh;
+    }
+
+    #float3 {
+        float: left;
+        width: 25%;
+        height: 10vh;
+    }
+
+    #float4 {
+        float: right;
+        width: 25%;
+        height: 10vh;
+    }
+
+    #float5 {
+        float: left;
+        width: 50%;
+        height: 15vh;
+    }
+
+    #float6 {
+        float: right;
+        width: 50%;
+        height: 15vh;
+    }
+
+    #float7 {
+        clear: both;
+        height: 40vh;
+    }
+
+    #float8 {
+        float: left;
+        width: 33%;
+        height: 30vh;
+    }
+
+    #float9 {
+        float: right;
+        width: 34%;
+        height: 30vh;
+    }
+
+    #float10 {
+        float: right;
+        width: 33%;
+        height: 30vh;
+    }
+
+}
