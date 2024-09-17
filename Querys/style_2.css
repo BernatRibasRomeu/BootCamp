@@ -1,0 +1,42 @@
+.color-1 {
+    background-color: rgb(238, 181, 76);
+    height: 20px;
+    margin: 2px;
+}
+
+.color-2 {
+    background-color: yellowgreen;
+    height: 20px;
+    margin: 2px;
+}
+
+.color-3 {
+    background-color: rgb(33, 142, 179);
+    height: 20px;
+    margin: 2px;
+}
+
+.color-4 {
+    background-color: grey;
+    height: 20px;
+    margin: 2px;
+}
+
+@media (width <=300px) {
+    #f1 {
+        float: left;
+    }
+
+    #f2 {
+        float: right;
+    }
+
+    #f3 {
+        clear: both;
+        float: left;
+    }
+
+    #f4 {
+        float: right;
+    }
+}
