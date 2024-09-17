@@ -73,3 +73,25 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+#float{
+    position: relative;
+    float: right;
+    height: 80px;
+    width: 80px;
+    mix-blend-mode: lighten;
+}
+.pos-1{
+    top: 0px;
+    left: -100px;
+    background: linear-gradient(rgb(100%, 0%, 0%), rgb(100%, 0%, 0%));
+}
+.pos-2{
+    top: -10px;
+    left: 60px;
+    background: linear-gradient(rgb(0%, 0%, 100%), rgb(0%, 0%, 100%));
+}
+.pos-3{
+    top: 35px;
+    left: -15px;
+    background: linear-gradient(rgb(0%, 90%, 0%), rgb(0%, 100%, 0%));
+}
