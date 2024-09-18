@@ -38,7 +38,6 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url('../images/landing.jpg');
-    object-fit: cover;
     height: 80vh;
     width: 100vw;
     background-size: cover;
@@ -59,4 +58,11 @@ body {
     color: var(--blanc);
     text-align: center;
 }
+
+.box-3{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
 
