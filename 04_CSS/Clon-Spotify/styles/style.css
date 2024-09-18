@@ -37,30 +37,26 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../images/landing.jpg');
+    object-fit: cover;
+    height: 80vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    
 }
-.concert{
-    width: 100%;
-    height: inherit;
-    position: relative;
-    z-index: 1;
-}
+
 .title-1{
-    position: relative;
-    top: -500px;
-    z-index: 2;
     color: var(--blanc);
+    text-align: center;
     
 }
 .box-1{
-    position: relative;
-    top: -520px;
-    z-index: 2;
     color: var(--blanc);
+    text-align: center;
 }
 .box-2{
-    position: relative;
-    top: -530px;
-    z-index: 2;
     color: var(--blanc);
+    text-align: center;
 }
 
