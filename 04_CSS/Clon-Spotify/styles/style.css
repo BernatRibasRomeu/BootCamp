@@ -59,8 +59,51 @@ body {
     text-align: center;
 }
 
-.box-3{
+.cont-3{
     display: flex;
     justify-content: center;
+}
+.box-3{
+    display: inline-block;
     font-weight: bold;
+    border-bottom: 2px solid  var(--verd);
+}
+.dibuix{
+    max-width: 100px;
+
+}
+.nom{
+    color: var(--verd);
+    text-align: center;
+}
+.text{
+    text-align: center;
+}
+.cont-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cont-5{
+    background-color: var(--verd);
+    color: var(--blanc);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.logoB{
+    max-width: 100px;
+}
+.app{
+    max-width: 200px;
+}
+.title-2{
+    text-decoration: underline;
 }
