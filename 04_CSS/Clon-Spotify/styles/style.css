@@ -6,186 +6,180 @@ Green: #00B172
 White: #FFF
 
 */
+
 :root {
     --text: #1a1a1a;
     --verd: #00B172;
     --blanc: #ffffff;
+    --negre: black;
 }
 
 body {
     margin: 0px;
 }
 
-.cont-1 {
+header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin: 10px;
 }
 
-.logoS {
-    max-width: 200px;
-}
-
-.enllaç {
-    text-decoration: none;
-    color: var(--text);
-    padding: 5px;
-}
-
-.cont-2 {
+nav {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+nav>a {
+    color: var(--negre);
+    font-size: large;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#logo {
+    width: 225px;
+}
+
+.concert {
+    background-image: url(../images/landing.jpg);
+    color: var(--blanc);
+    height: 50vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/landing.jpg');
-    height: 80vh;
-    width: 100vw;
-    background-size: cover;
+    flex-direction: column;
+    background-size: contain;
     background-position: center;
-
-}
-
-.title-1 {
-    color: var(--blanc);
+    font-size: xx-large;
     text-align: center;
 
+    
 }
 
-.box-1 {
-    color: var(--blanc);
+.concert>p {
+    margin: 0px 60px;
+}
+
+h2 {
     text-align: center;
+    text-decoration: underline var(--verd);
+    text-underline-offset: 10px;
 }
 
-.box-2 {
-    color: var(--blanc);
-    text-align: center;
+article>img {
+    width: 100px;
 }
 
-.cont-3 {
-    display: flex;
-    justify-content: center;
-}
-
-.box-3 {
-    display: inline-block;
-    font-weight: bold;
-    border-bottom: 2px solid var(--verd);
-}
-
-.dibuix {
-    max-width: 100px;
-
-}
-
-.nom {
-    color: var(--verd);
-    text-align: center;
-}
-
-.text {
-    text-align: center;
-}
-
-.cont-4 {
+.cartes {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 25px;
 }
 
-.box {
+.subcarta {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 25vw;
+    text-align: center;
 }
 
-.cont-5 {
+.subcarta>h3 {
+    font-weight: bold;
+    color: var(--verd);
+}
+.box{
     background-color: var(--verd);
+    padding: 30px;
     color: var(--blanc);
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-
 }
 
-.logoB {
-    max-width: 100px;
+.box>article{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    font-size: large;
 }
 
-.app {
-    max-width: 200px;
+.box>article>h3{
+    text-decoration: underline var(--blanc);
+    text-underline-offset: 10px;
+    font-size: x-large;
 }
 
-.title-2 {
-    text-decoration: underline;
+#logo2{
+    width: 100px;
+    height: 100px;
 }
 
-/* !Resolució per tables */
-@media(300px < width < 500px) {
-    .cont-1 {
-        display: flex;
+#app{
+    width: 300px;
+}
+/* Mobile */
+@media (width < 600px) {
+    header {
+        align-items: center;
         flex-direction: column;
-        justify-content: space-between;
-        flex-wrap: wrap;
     }
 
-    .cont-5 {
+    nav {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    nav>a {
+        font-size: small;
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    .concert {
+        font-size: medium;
+        height: 30vh;
+    }
+
+    .cartes {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 25px;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        flex-direction: column;
+        align-items: space-between;
     }
-
-    .app {
-        margin: 10px;
+    .box>img{
+        padding: 15px;
     }
 }
 
-    /* ?Resolució per smartphone */
-    @media (width < 300px) {
-        .cont-1{
-            display: flex;
-            flex-direction: column;
-        }
-        #pos-1{
-            float: left;
-        }
-        #pos-2{
-            float: right;
-        }
-        #pos-3{
-            clear: both;
-            float: left;
-        }
-        #pos-4{
-            float: right;
-        }
-        .title-1 {
-            color: var(--blanc);
-            text-align: center;
-            font-size: medium;
-        }
-        
-        .box-1 {
-            color: var(--blanc);
-            text-align: center;
-            font-size:small;
-        }
-        
-        .box-2 {
-            color: var(--blanc);
-            text-align: center;
-            font-size: small;
-        }
-        .cont-4{
-            display: flex;
-            flex-flow: column wrap;
-        }
-        .cont-5{
-            display: flex;
-            flex-flow: column wrap;
-        }
-        .app {
-            margin: 10px;
-        }
+/* Table */
+@media (601px < width < 900px) {
+
+    header {
+        align-items: center;
+        flex-direction: column;
     }
+
+    .concert {
+        font-size: large;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+    }
+    .box>img{
+        padding: 15px;
+    }
+}
