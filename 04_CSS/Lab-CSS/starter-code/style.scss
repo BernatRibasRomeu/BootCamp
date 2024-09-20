@@ -1,0 +1,26 @@
+// Large width
+body {
+  background-color: red;
+}
+
+
+// Medium width
+@media (892px < width < 1099px) {
+  body {
+    background-color: blue;
+  }
+}
+
+// Small width
+@media (601px < width < 891px) {
+  body {
+    background-color: greenyellow;
+  }
+}
+
+// Extra small width
+@media (width <=600px) {
+  body {
+    background-color: orange;
+  }
+}

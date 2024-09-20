@@ -1,0 +1,19 @@
+body {
+  background-color: red;
+}
+
+@media (892px < width < 1099px) {
+  body {
+    background-color: blue;
+  }
+}
+@media (601px < width < 891px) {
+  body {
+    background-color: greenyellow;
+  }
+}
+@media (width <= 600px) {
+  body {
+    background-color: orange;
+  }
+}/*# sourceMappingURL=style.css.map */
