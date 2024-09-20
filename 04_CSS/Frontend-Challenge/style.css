@@ -1,0 +1,160 @@
+/* Color scheme */
+:root {
+    --w: white;
+    --sedan-bg: rgb(226, 133, 37);
+    --sedan-color: rgb(255, 218, 154);
+    --suv-bg: rgb(1, 105, 114);
+    --suv-color: rgb(138, 212, 221);
+    --luxury-bg: rgb(0, 64, 63);
+    --luxury-color: rgb(169, 205, 207);
+}
+
+
+.p-font {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.h2-font {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Desktop */
+
+
+img {
+    width: 60px;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+h2 {
+    color: var(--w);
+}
+
+.sedan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--sedan-bg);
+    color: var(--sedan-color);
+    padding: 20px;
+
+}
+
+.suvs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--suv-bg);
+    color: var(--suv-color);
+    padding: 20px;
+}
+
+.luxury {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--luxury-bg);
+    color: var(--luxury-color);
+    padding: 20px;
+
+}
+
+.box {
+    height: 40px;
+    width: 100px;
+    border-radius: 20% /50%;
+    background-color: var(--w);
+    color: black;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.box-1 {
+    color: var(--sedan-bg);
+}
+
+.box-2 {
+    color: var(--suv-bg);
+}
+
+.box-3 {
+    color: var(--luxury-bg);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Desktop */
+@media (521px < width < 1440px) {
+    body {
+        margin: 10vh 10vw;
+        font-size: 15px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 60vh;
+    }
+
+    article {
+        width: 30vw;
+    }
+
+    .sedan {
+        border-top-left-radius: 15px 15px;
+        border-bottom-left-radius: 15px 15px;
+    }
+
+    .luxury {
+        border-top-right-radius: 15px 15px;
+        border-bottom-right-radius: 15px 15px;
+    }
+}
+
+/* Mobile */
+@media (width < 520px) {
+    body {
+        margin: 45px 15px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        height: auto;
+    }
+
+    .sedan {
+        border-top-left-radius: 15px 15px;
+        border-top-right-radius: 15px 15px;
+    }
+
+    .suvs {}
+
+    .luxury {
+        border-bottom-right-radius: 15px 15px;
+        border-bottom-left-radius: 15px 15px;
+    }
+}
