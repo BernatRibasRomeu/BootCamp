@@ -14,12 +14,12 @@ header {
   padding-right: 20px;
 }
 
-.conth {
+.header-1 {
   grid-column: 2/3;
   grid-row: 1/2;
 }
 
-.conth-1 {
+.cont-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,12 +41,12 @@ header {
   padding-left: 10px;
 }
 
-nav {
+.header-2 {
   grid-column: 2/3;
   grid-row: 2/3;
 }
 
-.conth-2 {
+.cont-2 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -75,12 +75,12 @@ main {
   background-color: rgb(236, 236, 236);
 }
 
-.barm {
+.welcome {
   grid-column: 2/5;
   grid-row: 2/3;
 }
 
-.contm-1 {
+.welcome-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -92,34 +92,34 @@ main {
   width: 15px;
 }
 
-.boxm-1 {
+.welcome-2 {
   font-weight: bold;
 }
 
-.boxm-2 {
+.welcome-3 {
   color: gray;
 }
 
-.boxm-3 {
+.welcome-4 {
   color: gray;
   width: 150px;
   border: 1px gray solid;
 }
 
-.boxm-4 {
+.welcome-5 {
   color: white;
   background-color: rgb(218, 85, 47);
   border-radius: 5px 5px;
 }
 
-.sidem-1 {
+.kitty-1 {
   grid-column: 4/5;
   grid-row: 4/5;
   background-color: white;
   padding: 10px;
 }
 
-.sidem-2 {
+.kitty-2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -127,13 +127,13 @@ main {
   font-weight: bold;
 }
 
-.sidem-3 {
+.kitty-3 {
   color: gray;
   font-size: small;
   padding: 10px;
 }
 
-.sidem-4 {
+.kitty-4 {
   color: white;
   background-color: rgb(218, 85, 47);
   border-radius: 5px 5px;
