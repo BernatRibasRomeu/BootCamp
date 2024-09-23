@@ -1,4 +1,5 @@
-let nom = "Bernat";
-console.log(nom);
-// window.alert(nom);
+// let nom = "Bernat";
 // alert(nom);
+
+resultat = window.prompt("Introdueix el teu nom:")
+alert(resultat)
