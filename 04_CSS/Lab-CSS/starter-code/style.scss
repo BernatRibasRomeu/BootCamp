@@ -1,35 +1,33 @@
 // LG large width < 1100px
 body {
-  margin: 0px;
-  // display: grid;
+  margin: 10px 0px;
   height: 100vh;
-  // grid-template-columns: 20vw 50vw 10vw 20vw;
-  // grid-template-rows: 100px 25px 50px 25px 2fr 15px 3fr 15px 3fr 15px 3fr 15px;
 }
 
-header{
+header {
   display: grid;
   height: 100px;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 50px 50px;
 }
 
-#logo{
-  width: 40px;
+#logo {
+  width: 50px;
+  padding-right: 20px;
 }
 
-.conth{
+.conth {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
 
-.conth-1{
+.conth-1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
-.boxh{
+.boxh {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,16 +35,55 @@ header{
 
 .boxh-1 {
   border: 1px lightgray solid;
+  width: 600px;
 }
 
-@media (892px < width < 1099px) {
+.boxh-2>div{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+nav {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.conth-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.conth-2>img {
+  width: 30px;
+  height: 30px;
+}
+
+nav>article,
+img {
+  color: grey;
+
+  &:hover {
+    color: black;
+    background-color: lightgray;
+  }
+}
+
+main{
+  display: grid;
+  grid-template-columns: 4fr 25px 4fr;
+  grid-template-rows: 1fr 25px 3fr 25px 4fr 25px 4fr 25px 4fr 25px;
+  background-color: rgb(236, 236, 236);
+  height: 100px;
+}
+
+.barm{
   
 }
 
-@media (601px < width < 891px) {
-  
-}
+@media (892px < width < 1099px) {}
 
-@media (width <=600px) {
+@media (601px < width < 891px) {}
 
-}
+@media (width <=600px) {}
