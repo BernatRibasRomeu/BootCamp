@@ -71,8 +71,7 @@ img:hover {
 
 main {
   display: grid;
-  grid-template-columns: 4fr 25px 4fr;
+  grid-template-columns: 1fr 4fr 25px 2fr 1fr;
   grid-template-rows: 1fr 25px 3fr 25px 4fr 25px 4fr 25px 4fr 25px;
   background-color: rgb(236, 236, 236);
-  height: 100px;
 }/*# sourceMappingURL=style.css.map */
