@@ -1,0 +1,1 @@
+// * Tant amb un bucle for com amb un while imprimeix 10 cops I ❤ code
