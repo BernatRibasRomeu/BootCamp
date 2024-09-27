@@ -138,4 +138,25 @@ main {
   background-color: rgb(218, 85, 47);
   border-radius: 5px 5px;
   text-align: center;
+}
+
+.live-chat {
+  grid-column: 4/5;
+  grid-row: 6/9;
+  background-color: white;
+}
+
+.live-title {
+  text-align: center;
+}
+
+.separator {
+  border-bottom: 1px solid gray;
+  width: 80%;
+  margin: 10px auto;
+}
+
+#photo {
+  border-radius: 50%;
+  width: 50px;
 }/*# sourceMappingURL=style.css.map */
