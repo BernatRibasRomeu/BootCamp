@@ -1,0 +1,1 @@
+// * Crea una variable num = 5 i que es redueixi a 0

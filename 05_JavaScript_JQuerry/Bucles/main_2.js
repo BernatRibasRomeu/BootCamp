@@ -1,0 +1,1 @@
+// * Defineix un array amb les lletres a, b, c, d, e i recorreles amb un bucle foreach
