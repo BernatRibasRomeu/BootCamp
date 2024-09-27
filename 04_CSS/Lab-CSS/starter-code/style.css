@@ -218,4 +218,27 @@ main {
   border: 2px solid rgb(218, 85, 47);
   background-color: white;
   border-radius: 5px;
+}
+
+.tweets {
+  grid-column: 4/5;
+  grid-row: 10/11;
+  background-color: white;
+}
+
+.tweets-title {
+  font-size: large;
+  font-weight: bold;
+  float: left;
+  padding: 15px 15px 0px;
+}
+
+.tweets-liked {
+  color: grey;
+  font-size: small;
+  margin-top: 20px;
+}
+
+.tweets-link {
+  padding: 0px 15px;
 }/*# sourceMappingURL=style.css.map */

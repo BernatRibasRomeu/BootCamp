@@ -235,6 +235,29 @@ main {
 
 //* Barra tweets
 
+.tweets{
+  grid-column: 4 / 5;
+  grid-row: 10 / 11;
+  background-color: white;
+}
+
+.tweets-title{
+  font-size: large;
+  font-weight: bold;
+  float: left;
+  padding: 15px 15px 0px;
+}
+
+.tweets-liked{
+  color: grey;
+  font-size: small;
+  margin-top: 20px;
+}
+
+.tweets-link{
+  padding: 0px 15px;
+}
+
 @media (892px < width < 1099px) {}
 
 @media (601px < width < 891px) {}
