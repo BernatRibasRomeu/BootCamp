@@ -234,7 +234,6 @@ main {
 }
 
 //* Barra tweets
-
 .tweets{
   grid-column: 4 / 5;
   grid-row: 10 / 11;
@@ -256,6 +255,19 @@ main {
 
 .tweets-link{
   padding: 0px 15px;
+}
+
+//* Bloc popular this week
+.popular-week{
+  grid-column: 2 / 3;
+  grid-row: 4 / 7;
+  background-color: white;
+}
+
+.popular-separator{
+  border-bottom: 1px solid lightgray;
+  width: 94%;
+  margin: 10px auto;
 }
 
 @media (892px < width < 1099px) {}

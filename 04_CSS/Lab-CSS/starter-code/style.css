@@ -241,4 +241,16 @@ main {
 
 .tweets-link {
   padding: 0px 15px;
+}
+
+.popular-week {
+  grid-column: 2/3;
+  grid-row: 4/7;
+  background-color: white;
+}
+
+.popular-separator {
+  border-bottom: 1px solid lightgray;
+  width: 94%;
+  margin: 10px auto;
 }/*# sourceMappingURL=style.css.map */
