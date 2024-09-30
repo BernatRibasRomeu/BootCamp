@@ -1,1 +1,0 @@
-//* Exercici arrays pagina 107 del pdf
