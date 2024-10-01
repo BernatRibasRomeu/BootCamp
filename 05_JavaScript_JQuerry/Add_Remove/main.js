@@ -2,12 +2,12 @@ let options = ['👾', '🎮', '🕹', '💻', '📺', '🖱', '🏎', '🎧'];
 
 let items = [];
 
-function getRandomOption(){
+function getRandomOption() {
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
 }
 
-function updateList(){
+function updateList() {
     const list = document.getElementById('list');
     list.innerHTML = '';
 
@@ -18,6 +18,7 @@ function updateList(){
 document.getElementById('push').addEventListener('click', () => {
     items.push(getRandomOption());
     updateList();
+    
 });
 
 document.getElementById('unshift').addEventListener('click', () => {
@@ -30,7 +31,7 @@ document.getElementById('insert').addEventListener('click', () => {
     if (index >= 0 && index <= 10) {
         items.splice(index, 0, getRandomOption());
         updateList();
-    }else{
+    } else {
         alert("Valor incorrecte, intenta amb números entre 0 i 10.")
     }
 });
@@ -47,7 +48,7 @@ document.getElementById('shift').addEventListener('click', () => {
 
 document.getElementById('remove').addEventListener('click', () => {
     const index = parseInt(document.getElementById('removeNum').value);
-    if (index >= 0 && index <= 10){
+    if (index >= 0 && index <= 10) {
         items.splice(index, 1);
         updateList();
     } else {
