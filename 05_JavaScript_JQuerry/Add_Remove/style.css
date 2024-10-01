@@ -1,0 +1,14 @@
+.button:active{
+    background-color: blueviolet;
+    color: white;
+}
+fieldset{
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px;
+    padding: 10px;
+    min-width: 240px;
+}
+legend{
+    font-weight: bold;
+}
