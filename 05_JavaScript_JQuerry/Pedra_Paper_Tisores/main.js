@@ -10,9 +10,9 @@ function determineWinner(player, computer) {
     if (player === computer) {
         return "Heu empatat!";
     }
-    else if ((player === 'piedra' && computer === 'tijeras') ||
-        (player === 'papel' && computer === 'piedra') ||
-        (player === 'tijeras' && computer === 'papel')) {
+    else if ((player === '👊' && computer === '✌') ||
+        (player === '🖐' && computer === '👊') ||
+        (player === '✌' && computer === '🖐')) {
         playerScore++;
         return "Has guanyat la ronda";
     }
@@ -25,11 +25,11 @@ function showResult(playerChoice) {
     var computer = computerChoice();
     var roundResult = determineWinner(playerChoice, computer);
     currentRound++;
-    console.log("Has escollit: ${playerChoice}. El ordinador has escollit: ${computer}. ${roundResult}");
-    console.log("Punts: Tu ${playerScore} - Ordinador ${computerScores}");
+    console.log(`Has escollit: ${playerChoice}. El ordinador has escollit: ${computer}. ${roundResult}`);
+    console.log(`Punts: Tu ${playerScore} - Ordinador ${computerScore}`);
     if (currentRound === maxRounds) {
         showFinalWinner();
-        resetGame();
+        setTimeout(resetGame, 5000);
     }
 }
 function showFinalWinner() {
@@ -43,31 +43,22 @@ function showFinalWinner() {
     else {
         finalWinner = "Heu empatat";
     }
+    console.log(finalWinner);
 }
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
     currentRound = 0;
+    console.clear();
     console.log("Juguem de nou");
 }
-document.getElementById('start').addEventListener('click', function (e) {
-    e.preventDefault();
-    var playerName = document.getElementById('jugador').value.trim();
-    if (playerName) {
-        console.log("Benvingut ".concat(playerName));
-        document.querySelector('.nameForm').style.display = 'none';
-        document.querySelector('.game').style.display = 'block';
-    }
-    else {
-        alert("Introdueix un nom.");
-    }
-});
+
 document.querySelectorAll('.stone, .paper, .scissors').forEach(function (button) {
     button.addEventListener('click', function (e) {
         e.preventDefault();
         var target = e.target;
-        var playerChoice = target.classList.contains('stone') ? 'piedra' :
-            target.classList.contains('paper') ? 'paper' : 'tijeras';
+        var playerChoice = target.classList.contains('stone') ? '👊' :
+            target.classList.contains('paper') ? '🖐' : '✌';
         showResult(playerChoice);
     });
 });
