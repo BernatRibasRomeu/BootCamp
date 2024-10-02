@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Cambié esto de space-evenly a center para centrar verticalmente */
+    justify-content: center;
+    background-color: black;
+}
+
+h2 {
+    background-color: red;
+    color: white;
+    padding: 5px;
+}
+
+.slider {
+    appearance: none;
+    width: 200px;
+    height: 8px;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+}
+
+.switch {
+    cursor: pointer;
+}
+
+.bulb-container {
+    position: relative; /* Este contenedor permite posicionar las bombillas absolutamente */
+    width: 500px; /* Ancho deseado */
+    height: auto; /* Mantiene la proporción */
+}
+
+.bulb {
+    position: absolute;
+    top: -310px;
+    left: 0;
+    width: 100%; /* Se adapta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    transition: opacity 0.3s; /* Suaviza la transición de la opacidad */
+}
+
+.bulb-off {
+    display: block; /* Mantener la bombilla apagada visible */
+}
+
+.bulb-on {
+    display: none; /* Mantener la bombilla encendida inicialmente oculta */
+}
