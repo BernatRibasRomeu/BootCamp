@@ -1,16 +1,20 @@
-const cardBack = document.getElementsByClassName('back') as HTMLCollectionOf<HTMLElement>;
-const cardFront = document.getElementsByClassName('front') as HTMLCollectionOf<HTMLElement>;
+const cards = document.querySelectorAll('.card-inner');
 
-for (let i = 0; i < cardFront.length; i++) {
-    cardFront[i].style.display = 'none';
-}
-for (let i = 0; i < cardBack.length; i++) {
-    cardBack[i].addEventListener('mousemove', (e) => {
-        cardBack[i].style.display = 'none';
-        cardFront[i].style.display = 'inline';
+cards.forEach((card) => {
+    const cardBack = card.querySelector('.card-back') as HTMLElement;
+    const cardFront = card.querySelector('.card-front') as HTMLElement;
+
+    cardFront.style.opacity = '0';
+
+    cardBack.addEventListener('mouseenter', () => {
+        card.classList.add('card-flip');
+        cardBack.style.opacity = '0';
+        cardFront.style.opacity = '1';
     });
-    cardFront[i].addEventListener('mouseout', (e) => {
-        cardFront[i].style.display = 'none';
-        cardBack[i].style.display = 'inline';
+
+    cardFront.addEventListener('mouseleave', () => {
+        card.classList.remove('card-flip');
+        cardBack.style.opacity = '1';
+        cardFront.style.opacity = '0';
     });
-}
+});

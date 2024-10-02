@@ -1,18 +1,16 @@
-var cardBack = document.getElementsByClassName('back');
-var cardFront = document.getElementsByClassName('front');
-for (var i = 0; i < cardFront.length; i++) {
-    cardFront[i].style.display = 'none';
-}
-var _loop_1 = function (i) {
-    cardBack[i].addEventListener('mousemove', function (e) {
-        cardBack[i].style.display = 'none';
-        cardFront[i].style.display = 'inline';
+var cards = document.querySelectorAll('.card-inner');
+cards.forEach(function (card) {
+    var cardBack = card.querySelector('.card-back');
+    var cardFront = card.querySelector('.card-front');
+    cardFront.style.opacity = '0';
+    cardBack.addEventListener('mouseenter', function () {
+        card.classList.add('card-flip');
+        cardBack.style.opacity = '0';
+        cardFront.style.opacity = '1';
     });
-    cardFront[i].addEventListener('mouseout', function (e) {
-        cardFront[i].style.display = 'none';
-        cardBack[i].style.display = 'inline';
+    cardFront.addEventListener('mouseleave', function () {
+        card.classList.remove('card-flip');
+        cardBack.style.opacity = '1';
+        cardFront.style.opacity = '0';
     });
-};
-for (var i = 0; i < cardBack.length; i++) {
-    _loop_1(i);
-}
+});
