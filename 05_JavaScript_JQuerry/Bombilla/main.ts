@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const switchOff = document.querySelector('.switch-off') as HTMLImageElement;
     const intensityInput = document.getElementById('intensity') as HTMLInputElement;
     const sizeInput = document.getElementById('size') as HTMLInputElement;
+    const rotationInput = document.getElementById('rotation') as HTMLInputElement;
 
     let isTurnedOn = false;
 
@@ -19,37 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
         bulbOn.style.display = 'block';
         switchOff.style.display = 'none';
         switchOn.style.display = 'block';
-        adjustIntensity();
     };
 
     const turnOff = () => {
         isTurnedOn = false;
         bulbOn.style.display = 'none';
         bulbOff.style.display = 'block';
+        bulbOff.style.opacity ='100';
         switchOn.style.display = 'none';
         switchOff.style.display = 'block';
-        intensityInput.setAttribute('disabled', 'true');
-        intensityInput.removeEventListener('input', disableIntensity);
     };
 
     const adjustIntensity = () => {
-        bulbOff.style.opacity = '0';
-        bulbOff.style.display = 'block';
-        const intensityValue = Number(intensityInput.value);
-        bulbOn.style.opacity = (intensityValue / 100).toString();
-        bulbOff.style.opacity = (1 - (intensityValue / 100)).toString();
-    };
-
-    const disableIntensity = () => {
         if (isTurnedOn) {
-            bulbOff.style.opacity = '0';
             bulbOff.style.display = 'block';
             const intensityValue = Number(intensityInput.value);
             bulbOn.style.opacity = (intensityValue / 100).toString();
             bulbOff.style.opacity = (1 - (intensityValue / 100)).toString();
         } else {
-            bulbOff.style.opacity ='100';
             bulbOff.style.display = 'block';
+            bulbOff.style.opacity ='100';
         }
     };
 
@@ -65,6 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const adjustRotation = () => {
+        const rotationValue = Number(rotationInput.value);
+        bulb.forEach(element => {
+            element.style.transform = `rotate(${rotationValue}deg)`
+        });
+
+    }
     switchOff.addEventListener('click', turnOn);
 
     switchOn.addEventListener('click', turnOff);
@@ -72,4 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     intensityInput.addEventListener('input', adjustIntensity);
 
     sizeInput.addEventListener('input', adjustSize);
+
+    rotationInput.addEventListener('input', adjustRotation);
 });

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var switchOff = document.querySelector('.switch-off');
     var intensityInput = document.getElementById('intensity');
     var sizeInput = document.getElementById('size');
+    var rotationInput = document.getElementById('rotation');
     var isTurnedOn = false;
     bulbOn.style.display = 'none';
     bulbOff.style.display = 'block';
@@ -16,35 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
         bulbOn.style.display = 'block';
         switchOff.style.display = 'none';
         switchOn.style.display = 'block';
-        adjustIntensity();
     };
     var turnOff = function () {
         isTurnedOn = false;
         bulbOn.style.display = 'none';
         bulbOff.style.display = 'block';
+        bulbOff.style.opacity = '100';
         switchOn.style.display = 'none';
         switchOff.style.display = 'block';
-        intensityInput.setAttribute('disabled', 'true');
-        intensityInput.removeEventListener('input', disableIntensity);
     };
     var adjustIntensity = function () {
-        bulbOff.style.opacity = '0';
-        bulbOff.style.display = 'block';
-        var intensityValue = Number(intensityInput.value);
-        bulbOn.style.opacity = (intensityValue / 100).toString();
-        bulbOff.style.opacity = (1 - (intensityValue / 100)).toString();
-    };
-    var disableIntensity = function () {
         if (isTurnedOn) {
-            bulbOff.style.opacity = '0';
             bulbOff.style.display = 'block';
             var intensityValue = Number(intensityInput.value);
             bulbOn.style.opacity = (intensityValue / 100).toString();
             bulbOff.style.opacity = (1 - (intensityValue / 100)).toString();
         }
         else {
-            bulbOff.style.opacity = '100';
             bulbOff.style.display = 'block';
+            bulbOff.style.opacity = '100';
         }
     };
     var adjustSize = function () {
@@ -59,8 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     };
+    var adjustRotation = function () {
+        var rotationValue = Number(rotationInput.value);
+        bulb.forEach(function (element) {
+            element.style.transform = "rotate(".concat(rotationValue, "deg)");
+        });
+    };
     switchOff.addEventListener('click', turnOn);
     switchOn.addEventListener('click', turnOff);
     intensityInput.addEventListener('input', adjustIntensity);
     sizeInput.addEventListener('input', adjustSize);
+    rotationInput.addEventListener('input', adjustRotation);
 });
