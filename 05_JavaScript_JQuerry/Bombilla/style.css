@@ -43,8 +43,7 @@ h2 {
 
 .bulb {
     position: absolute;
-    top: -310px;
-    left: 0;
+    transform: translate(-50%, -50%);
     width: 100%; /* Se adapta al ancho del contenedor */
     height: auto; /* Mantiene la proporción */
     transition: opacity 0.3s; /* Suaviza la transición de la opacidad */
