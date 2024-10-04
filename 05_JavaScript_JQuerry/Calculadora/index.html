@@ -1,50 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body>
-    <section class="calculadora">
-      <header>
-        <section class="barra">
-          <div>calc</div>
-          <div class="temas">
-            <div>TEMA</div>
-            <div class="slider">
-              <div class="ball"></div>
-          </div>         
-            <div>1 2 3</div>
+  <body class="league-spartan">
+    <header>
+      <div>calc</div>
+      <section class="temas">
+        <div>TEMAS</div>
+        <article class="theme-switch">
+          <article class="selector">
+            <span class="theme-name">1</span>
+            <span class="theme-name">2</span>
+            <span class="theme-name">3</span>
+          </article>
+          <div class="switch">
+            <input type="range" id="theme-range" min="1" max="3" value="1" step="1">
           </div>
-        </section>
-      </header>
-      <section class="pantalla">
-        <div></div>
+        </article>
       </section>
-      <section class="teclat">
-        <div class="button" id="num1">1</div>
-        <div class="button" id="num2">2</div>
-        <div class="button" id="num3">3</div>
-        <div class="button" id="num4">4</div>
-        <div class="button" id="num5">5</div>
-        <div class="button" id="num6">6</div>
-        <div class="button" id="num7">7</div>
-        <div class="button" id="num8">8</div>
-        <div class="button" id="num9">9</div>
-        <div class="button" id="num0">0</div>
-        <div class="button" id="suma">+</div>
-        <div class="button" id="resta">-</div>
-        <div class="button" id="mult">x</div>
-        <div class="button" id="divisio">/</div>
-        <div class="button" id="coma">.</div>
-        <div class="button" id="igual">=</div>
-        <div class="button" id="del">DEL</div>
-        <div class="button" id="reset">RESET</div>
+    </header>
+    <main class="first-theme">
+      <section class="screen">
+        <div class="resultat">0</div>
       </section>
-    </section>
+      <section class="keypad">
+        <button id="num1" class="button">1</button>
+        <button id="num2" class="button">2</button>
+        <button id="num3" class="button">3</button>
+        <button id="num4" class="button">4</button>
+        <button id="num5" class="button">5</button>
+        <button id="num6" class="button">6</button>
+        <button id="num7" class="button">7</button>
+        <button id="num8" class="button">8</button>
+        <button id="num9" class="button">9</button>
+        <button id="num0" class="button">0</button>
+        <button id="suma" class="button">+</button>
+        <button id="resta" class="button">-</button>
+        <button id="mult" class="button">x</button>
+        <button id="divisio" class="button">/</button>
+        <button id="coma" class="button">.</button>
+        <button id="igual" class="button igual">=</button>
+        <button id="delete" class="button special">DEL</button>
+        <button id="reset" class="button tspecial">RESET</button>
+      </section>
+    </main>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

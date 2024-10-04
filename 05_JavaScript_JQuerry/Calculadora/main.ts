@@ -1,22 +1,25 @@
-const slider = document.querySelector('.slider') as HTMLElement;
-const ball = document.querySelector('.ball') as HTMLElement;
+// Obtenemos el slider y el root de CSS
+const rangeInput = document.getElementById('theme-range') as HTMLInputElement | null;
+const root = document.documentElement; // El root representa ":root" en CSS
 
-let currentPosition = 0; // 0 para la izquierda, 1 para el centro, 2 para la derecha
+if (rangeInput) {
+    rangeInput.addEventListener('input', () => {
+        // Limpiar clases de tema
+        root.classList.remove('second-theme', 'third-theme');
 
-slider.addEventListener('click', (event) => {
-    const sliderWidth = slider.offsetWidth;
-    const clickPosition = event.offsetX; // Posición del clic
-
-    // Calcular la posición en base a donde se hizo clic
-    if (clickPosition < sliderWidth / 3) {
-        currentPosition = 0; // Mover a la izquierda
-    } else if (clickPosition < (sliderWidth * 2) / 3) {
-        currentPosition = 1; // Mover al centro
-    } else {
-        currentPosition = 2; // Mover a la derecha
-    }
-
-    // Aplicar la clase correspondiente para mover la bola
-    ball.className = 'ball'; // Resetear las clases
-    ball.classList.add(`position-${currentPosition}`);
-});
+        // Cambiar tema según el valor del slider
+        switch (rangeInput.value) {
+            case '1':
+                // Tema por defecto (no se aplica clase adicional)
+                break;
+            case '2':
+                // Aplicar el segundo tema
+                root.classList.add('second-theme');
+                break;
+            case '3':
+                // Aplicar el tercer tema
+                root.classList.add('third-theme');
+                break;
+        }
+    });
+}
