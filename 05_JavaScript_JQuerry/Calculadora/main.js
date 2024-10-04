@@ -1,21 +1,15 @@
-// Obtenemos el slider y el root de CSS
 var rangeInput = document.getElementById('theme-range');
-var root = document.documentElement; // El root representa ":root" en CSS
+var root = document.documentElement;
 if (rangeInput) {
     rangeInput.addEventListener('input', function () {
-        // Limpiar clases de tema
         root.classList.remove('second-theme', 'third-theme');
-        // Cambiar tema según el valor del slider
         switch (rangeInput.value) {
             case '1':
-                // Tema por defecto (no se aplica clase adicional)
                 break;
             case '2':
-                // Aplicar el segundo tema
                 root.classList.add('second-theme');
                 break;
             case '3':
-                // Aplicar el tercer tema
                 root.classList.add('third-theme');
                 break;
         }
