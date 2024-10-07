@@ -1,15 +1,16 @@
+var _a, _b;
 // Preguntas y respuestas
-const questions = [
+var questions = [
     {
         question: '¿Quién es el líder de toda la humanidad?',
         options: ['Horus', 'Guilliman', 'El Emperador', 'Sanguinius'],
         correct: 'El Emperador'
     },
-    { question: '¿Qué evento catastrófico dividió al Imperio de la Humanidad y provocó la creación de la Gran Fisura (Cicatrix Maledictum)?', 
+    { question: '¿Qué evento catastrófico dividió al Imperio de la Humanidad y provocó la creación de la Gran Fisura (Cicatrix Maledictum)?',
         options: ['La Herejía de Horus',
             'La Cruzada Indómita',
             'El Gran Cisma',
-            'La Caída de Cadia'], 
+            'La Caída de Cadia'],
         correct: 'La Herejía de Horus' },
     {
         question: '¿Qué es el Omnissiah en la cultura del Adeptus Mechanicus?',
@@ -95,77 +96,67 @@ const questions = [
     },
     // Añade más preguntas aquí
 ];
-
-let currentQuestionIndex: number = 0;
-let score: number = 0;
-let selectedMode: 'practice' | 'exam' = 'practice';
-
+var currentQuestionIndex = 0;
+var score = 0;
+var selectedMode = 'practice';
 // Referencias al DOM
-const modeSelection = document.getElementById('mode-selection') as HTMLElement;
-const quizSection = document.getElementById('quiz-section') as HTMLElement;
-const modeTitle = document.getElementById('mode-title') as HTMLElement;
-const questionContainer = document.getElementById('question-container') as HTMLElement;
-const feedback = document.getElementById('feedback') as HTMLElement;
-const nextButton = document.getElementById('next-question') as HTMLElement;
-const submitButton = document.getElementById('submit-quiz') as HTMLElement;
-
+var modeSelection = document.getElementById('mode-selection');
+var quizSection = document.getElementById('quiz-section');
+var modeTitle = document.getElementById('mode-title');
+var questionContainer = document.getElementById('question-container');
+var feedback = document.getElementById('feedback');
+var nextButton = document.getElementById('next-question');
+var submitButton = document.getElementById('submit-quiz');
 // Función para mostrar preguntas
 function showQuestion() {
     feedback.innerHTML = ''; // Limpiar feedback
-    const question = questions[currentQuestionIndex];
-    questionContainer.innerHTML = `
-      <p>${question.question}</p>
-      ${question.options.map((option, index) => `
-        <button class="option-btn" data-option="${option}">${index + 1}. ${option}</button>
-      `).join('')}
-    `;
-
+    var question = questions[currentQuestionIndex];
+    questionContainer.innerHTML = "\n      <p>".concat(question.question, "</p>\n      ").concat(question.options.map(function (option, index) { return "\n        <button class=\"option-btn\" data-option=\"".concat(option, "\">").concat(index + 1, ". ").concat(option, "</button>\n      "); }).join(''), "\n    ");
     // Agregar eventos a los botones de las opciones
-    const optionButtons = document.querySelectorAll('.option-btn');
-    optionButtons.forEach(button => {
-        button.addEventListener('click', () => handleAnswer(button.getAttribute('data-option') || ""));
+    var optionButtons = document.querySelectorAll('.option-btn');
+    optionButtons.forEach(function (button) {
+        button.addEventListener('click', function () { return handleAnswer(button.getAttribute('data-option') || ""); });
     });
 }
-
 // Función para manejar la respuesta
-function handleAnswer(selectedAnswer: string) {
-    const correctAnswer = questions[currentQuestionIndex].correct;
-
+function handleAnswer(selectedAnswer) {
+    var correctAnswer = questions[currentQuestionIndex].correct;
     if (selectedMode === 'practice') {
         if (selectedAnswer === correctAnswer) {
             feedback.innerHTML = '¡Correcto!';
             score++;
-        } else {
-            feedback.innerHTML = `Incorrecto. La respuesta correcta es ${correctAnswer}.`;
+        }
+        else {
+            feedback.innerHTML = "Incorrecto. La respuesta correcta es ".concat(correctAnswer, ".");
         }
         nextButton.style.display = 'inline';
-    } else {
+    }
+    else {
         // En modo examen no mostramos feedback inmediato
-        if (selectedAnswer === correctAnswer) score++;
+        if (selectedAnswer === correctAnswer)
+            score++;
         nextQuestion();
     }
 }
-
 // Función para avanzar a la siguiente pregunta
 function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion();
         nextButton.style.display = 'none';
-    } else {
+    }
+    else {
         finishQuiz();
     }
 }
-
 // Función para finalizar el examen
 function finishQuiz() {
     quizSection.style.display = 'none';
-    alert(`Examen finalizado. Tu puntuación es: ${score}/${questions.length}`);
+    alert("Examen finalizado. Tu puntuaci\u00F3n es: ".concat(score, "/").concat(questions.length));
     resetQuiz();
 }
-
 // Función para iniciar el test
-function startQuiz(mode: 'practice' | 'exam') {
+function startQuiz(mode) {
     selectedMode = mode;
     currentQuestionIndex = 0;
     score = 0;
@@ -175,24 +166,21 @@ function startQuiz(mode: 'practice' | 'exam') {
     showQuestion();
     if (mode === 'exam') {
         submitButton.style.display = 'inline';
-    } else {
+    }
+    else {
         submitButton.style.display = 'none';
     }
 }
-
 // Función para resetear el test
 function resetQuiz() {
     modeSelection.style.display = 'block';
     quizSection.style.display = 'none';
     nextButton.style.display = 'none';
 }
-
 // Eventos para los botones de selección de modo
-document.getElementById('practice-mode')?.addEventListener('click', () => startQuiz('practice'));
-document.getElementById('exam-mode')?.addEventListener('click', () => startQuiz('exam'));
-
+(_a = document.getElementById('practice-mode')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () { return startQuiz('practice'); });
+(_b = document.getElementById('exam-mode')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', function () { return startQuiz('exam'); });
 // Evento para el botón "Siguiente" en modo práctica
 nextButton.addEventListener('click', nextQuestion);
-
 // Evento para el botón "Terminar Examen"
 submitButton.addEventListener('click', finishQuiz);
