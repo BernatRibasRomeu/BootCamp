@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-
-  <body>
-    <section class="calculadora">
-      <header>
-        <section class="barra">
-          <div>calc</div>
-          <div class="temas">
-            <div>TEMA</div>
-            <div class="slider">
-              <div class="ball"></div>
-          </div>         
-            <div>1 2 3</div>
-          </div>
-        </section>
-      </header>
-      <section class="pantalla">
-        <div></div>
-      </section>
-      <section class="teclat">
-        <div class="button" id="num1">1</div>
-        <div class="button" id="num2">2</div>
-        <div class="button" id="num3">3</div>
-        <div class="button" id="num4">4</div>
-        <div class="button" id="num5">5</div>
-        <div class="button" id="num6">6</div>
-        <div class="button" id="num7">7</div>
-        <div class="button" id="num8">8</div>
-        <div class="button" id="num9">9</div>
-        <div class="button" id="num0">0</div>
-        <div class="button" id="suma">+</div>
-        <div class="button" id="resta">-</div>
-        <div class="button" id="mult">x</div>
-        <div class="button" id="divisio">/</div>
-        <div class="button" id="coma">.</div>
-        <div class="button" id="igual">=</div>
-        <div class="button" id="del">DEL</div>
-        <div class="button" id="reset">RESET</div>
-      </section>
-    </section>
-    <script type="module" src="./main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="theme-switcher">
+            <span>Theme</span>
+            <div class="theme-toggle">
+                <input type="radio" id="theme1" name="theme" checked>
+                <label for="theme1">1</label>
+                <input type="radio" id="theme2" name="theme">
+                <label for="theme2">2</label>
+                <input type="radio" id="theme3" name="theme">
+                <label for="theme3">3</label>
+            </div>
+        </div>
+        <div class="display">
+            <span class="calc-text">calc</span>
+            <div class="screen" id="screen">0</div>
+        </div>
+        <div class="buttons">
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button class="del" id="del">DEL</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="+">+</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="-">-</button>
+            <button data-value=".">.</button>
+            <button data-value="0">0</button>
+            <button data-value="/">/</button>
+            <button data-value="*">x</button>
+            <button class="reset" id="reset">RESET</button>
+            <button class="equals" id="equals">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

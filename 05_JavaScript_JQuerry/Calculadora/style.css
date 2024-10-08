@@ -1,61 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Arial', sans-serif;
+    background-color: #3b4664;
     display: flex;
     justify-content: center;
-    background-color: hsl(222, 26%, 31%);
-    margin: 0px;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.calculadora{
+
+.calculator {
+    width: 320px;
+    padding: 20px;
+    background-color: #252d44;
+    border-radius: 15px;
+}
+
+.theme-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.theme-toggle input[type="radio"] {
+    display: none;
+}
+
+.theme-toggle label {
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.screen {
+    font-size: 2rem;
+    background-color: #181f32;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    width: 100%;
+}
+
+.buttons {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 4fr;
-    width: 500px;
-    height: 600px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-.header{
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+button {
+    font-size: 1.5rem;
+    padding: 20px;
+    background-color: #eae3dc;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #b4a597;
+    cursor: pointer;
 }
 
-.slider {
-    position: relative;
-    width: 300px; /* Ancho de la barra */
-    height: 10px; /* Alto de la barra */
-    background-color: #ccc; /* Color de la barra */
-    border-radius: 5px; /* Esquinas redondeadas */
-    margin: 20px;
+button:active {
+    box-shadow: none;
 }
 
-.ball {
-    position: absolute;
-    width: 20px; /* Ancho de la bola */
-    height: 20px; /* Alto de la bola */
-    background-color: #007bff; /* Color de la bola */
-    border-radius: 50%; /* Es un círculo */
-    transition: left 0.2s ease; /* Transición suave al mover la bola */
+.del, .reset, .equals {
+    color: white;
 }
 
-/* Posiciones para los valores 0, 1 y 2 */
-.position-0 {
-    left: 0; /* Posición 0 */
+.del {
+    background-color: #647198;
 }
 
-.position-1 {
-    left: 50%; /* Posición 1 (centro) */
-    transform: translateX(-50%); /* Centrar la bola */
+.reset {
+    background-color: #647198;
+    grid-column: span 2;
 }
 
-.position-2 {
-    right: 0; /* Posición 2 */
-}
-
-
-.pantalla{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.teclat{
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
+.equals {
+    background-color: #d03f2f;
+    grid-column: span 2;
 }

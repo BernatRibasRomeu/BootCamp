@@ -1,22 +1,81 @@
-const slider = document.querySelector('.slider') as HTMLElement;
-const ball = document.querySelector('.ball') as HTMLElement;
+const pantalla = document.getElementById('pantalla') as HTMLElement;
+let currentInput: string = '';
+let previousInput: string = '';
+let operator: string = '';
+let resetScreen: boolean = false;
 
-let currentPosition = 0; // 0 para la izquierda, 1 para el centro, 2 para la derecha
+document.querySelectorAll('.buttons button').forEach(button => {
+    button.addEventListener('click', () => {
+        const value = (button as HTMLButtonElement).getAttribute('data-value');
+        if (value) handleInput(value);
+    });
+});
 
-slider.addEventListener('click', (event) => {
-    const sliderWidth = slider.offsetWidth;
-    const clickPosition = event.offsetX; // Posición del clic
+document.getElementById('equals')?.addEventListener('click', calculate);
+document.getElementById('reset')?.addEventListener('click', resetCalculator);
+document.getElementById('del')?.addEventListener('click', deleteLastChar);
 
-    // Calcular la posición en base a donde se hizo clic
-    if (clickPosition < sliderWidth / 3) {
-        currentPosition = 0; // Mover a la izquierda
-    } else if (clickPosition < (sliderWidth * 2) / 3) {
-        currentPosition = 1; // Mover al centro
-    } else {
-        currentPosition = 2; // Mover a la derecha
+function handleInput(value: string): void {
+    if (resetScreen) {
+        pantalla.textContent = '';
+        resetScreen = false;
     }
 
-    // Aplicar la clase correspondiente para mover la bola
-    ball.className = 'ball'; // Resetear las clases
-    ball.classList.add(`position-${currentPosition}`);
-});
+    if (['+', '-', '*', '/'].includes(value)) {
+        if (previousInput && currentInput && operator) {
+            calculate();
+        }
+        operator = value;
+        previousInput = currentInput;
+        currentInput = '';
+    } else {
+        if (pantalla.textContent === '0') {
+            pantalla.textContent = '';
+        }
+        currentInput += value;
+        pantalla.textContent += value;
+    }
+}
+
+function calculate(): void {
+    if (previousInput && currentInput && operator) {
+        const prev: number = parseFloat(previousInput);
+        const current: number = parseFloat(currentInput);
+        let result: number | undefined;
+
+        switch (operator) {
+            case '+':
+                result = prev + current;
+                break;
+            case '-':
+                result = prev - current;
+                break;
+            case '*':
+                result = prev * current;
+                break;
+            case '/':
+                result = prev / current;
+                break;
+        }
+
+        if (result !== undefined) {
+            pantalla.textContent = result.toString();
+            previousInput = result.toString();
+            currentInput = '';
+            operator = '';
+            resetScreen = true;
+        }
+    }
+}
+
+function resetCalculator(): void {
+    currentInput = '';
+    previousInput = '';
+    operator = '';
+    pantalla.textContent = '0';
+}
+
+function deleteLastChar(): void {
+    currentInput = currentInput.slice(0, -1);
+    pantalla.textContent = currentInput || '0';
+}

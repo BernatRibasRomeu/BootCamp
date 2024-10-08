@@ -1,20 +1,75 @@
-var slider = document.querySelector('.slider');
-var ball = document.querySelector('.ball');
-var currentPosition = 0; // 0 para la izquierda, 1 para el centro, 2 para la derecha
-slider.addEventListener('click', function (event) {
-    var sliderWidth = slider.offsetWidth;
-    var clickPosition = event.offsetX; // Posición del clic
-    // Calcular la posición en base a donde se hizo clic
-    if (clickPosition < sliderWidth / 3) {
-        currentPosition = 0; // Mover a la izquierda
+var _a, _b, _c;
+var pantalla = document.getElementById('pantalla');
+var currentInput = '';
+var previousInput = '';
+var operator = '';
+var resetScreen = false;
+document.querySelectorAll('.buttons button').forEach(function (button) {
+    button.addEventListener('click', function () {
+        var value = button.getAttribute('data-value');
+        if (value)
+            handleInput(value);
+    });
+});
+(_a = document.getElementById('equals')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', calculate);
+(_b = document.getElementById('reset')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', resetCalculator);
+(_c = document.getElementById('del')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', deleteLastChar);
+function handleInput(value) {
+    if (resetScreen) {
+        pantalla.textContent = '';
+        resetScreen = false;
     }
-    else if (clickPosition < (sliderWidth * 2) / 3) {
-        currentPosition = 1; // Mover al centro
+    if (['+', '-', '*', '/'].includes(value)) {
+        if (previousInput && currentInput && operator) {
+            calculate();
+        }
+        operator = value;
+        previousInput = currentInput;
+        currentInput = '';
     }
     else {
-        currentPosition = 2; // Mover a la derecha
+        if (pantalla.textContent === '0') {
+            pantalla.textContent = '';
+        }
+        currentInput += value;
+        pantalla.textContent += value;
     }
-    // Aplicar la clase correspondiente para mover la bola
-    ball.className = 'ball'; // Resetear las clases
-    ball.classList.add("position-".concat(currentPosition));
-});
+}
+function calculate() {
+    if (previousInput && currentInput && operator) {
+        var prev = parseFloat(previousInput);
+        var current = parseFloat(currentInput);
+        var result = void 0;
+        switch (operator) {
+            case '+':
+                result = prev + current;
+                break;
+            case '-':
+                result = prev - current;
+                break;
+            case '*':
+                result = prev * current;
+                break;
+            case '/':
+                result = prev / current;
+                break;
+        }
+        if (result !== undefined) {
+            pantalla.textContent = result.toString();
+            previousInput = result.toString();
+            currentInput = '';
+            operator = '';
+            resetScreen = true;
+        }
+    }
+}
+function resetCalculator() {
+    currentInput = '';
+    previousInput = '';
+    operator = '';
+    pantalla.textContent = '0';
+}
+function deleteLastChar() {
+    currentInput = currentInput.slice(0, -1);
+    pantalla.textContent = currentInput || '0';
+}
