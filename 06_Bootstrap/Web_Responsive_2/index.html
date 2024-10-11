@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Responsive 2</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="m-2">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row mb-1 bg-green border border-2 border-dark">Head</div>
-        <div class="row mb-1 d-flex flex-column">
-            <div class="col mb-1 bg-red border border-2 border-dark">Sidebar</div>
-            <div class="col">
-                <div class="row d-flex flex-column border border-1 border-dark gap-1">
-                    <div class="g-col bg-purple border border-1 border-dark text-white">Title</div>
-                    <div class="g-col bg-orange border border-1 border-dark">Main 1</div>
-                    <div class="g-col bg-orange border border-1 border-dark">Main 2</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 1</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 2</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 3</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 4</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 5</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 6</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 7</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 8</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 9</div>
-                    <div class="g-col bg-blue border border-1 border-dark text-white">Body 10</div>
+        <div class="row mb-1 d-flex flex-column flex-sm-row">
+            <div class="col-12 col-sm-3 col-md-4 mb-1 bg-red border border-2 border-dark">Side bar</div>
+            <div class="col-12 col-sm-9 col-md-8">
+                <div class="row p-1 border border-1 border-dark">
+                    <div class="col-12 bg-purple border border-1 border-dark text-white">Title</div>
+                    <div class="col-12 col-md-6 bg-orange border border-1 border-dark">Main 1</div>
+                    <div class="col-12 col-md-6 bg-orange border border-1 border-dark">Main 2</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 1</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 2</div>
+                    <div class="col-6 col-sm-4 col-md-4 bg-blue border border-1 border-dark text-white">Body 3</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 4</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 5</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 6</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 7</div>
+                    <div class="col-6 col-sm-4 col-md-4 bg-blue border border-1 border-dark text-white">Body 8</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 9</div>
+                    <div class="col-6 col-sm-4 col-md-2 bg-blue border border-1 border-dark text-white">Body 10</div>
                 </div>
             </div>
         </div>
@@ -33,4 +35,5 @@
     </div>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
