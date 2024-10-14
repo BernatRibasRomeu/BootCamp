@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Warhammer 40k</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section id="mode-selection">
+        <h1 class="text">Bienvenido a un quiz de Warhammer 40k</h1>
+        <div class="text">Aquí podrás hacer este pequeño test para ver si tienes los conocimientos básicos sobre
+            Warhammer
+            40k. El test se puede
+            hacer de dos maneras: modo práctica y modo examen.</div>
+        <section class="container">
+            <article class="container-sub">
+                <div>El modo práctica te corregirá cada pregunta por separado, así podrás ver dónde fallas.</div>
+                <button id="practice-mode" class="btn">Modo práctica</button>
+            </article>
+            <article class="container-sub">
+                <div>El modo examen te dirá el resultado del test al finalizarlo.</div>
+                <button id="exam-mode" class="btn">Modo examen</button>
+            </article>
+        </section>
+
+    </section>
+    <section id="quiz-section" style="display:none;">
+        <h2 id="mode-title"></h2>
+        <div id="question-container"></div>
+        <button id="next-question" style="display:none;">Siguiente</button>
+        <button id="submit-quiz" style="display:none;">Terminar Examen</button>
+        <div id="feedback"></div>
+    </section>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

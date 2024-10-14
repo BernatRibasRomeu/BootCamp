@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici Bombilla</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="bulb-container">
+        <img src="./images/off.jpg" alt="" class="bulb bulb-off">
+        <img src="./images/on.jpg" alt="" class="bulb bulb-on">
+    </section>
+    <section>
+        <article class="switch-container">
+            <h2>Interruptor</h2>
+            <img src="./images/boff.jpg" alt="" class="switch switch-off">
+            <img src="./images/bon.jpg" alt="" class="switch switch-on">
+        </article>
+        <article>
+            <h2>Intensitat de la llum</h2>
+            <input class="slider" type="range" id="intensity" name="intensity" min="0" max="100" value="100">
+        </article>
+        <article>
+            <h2>Tamany de la llum</h2>
+            <input class="slider" type="range" id="size" name="size" min="0" max="450" value="450">
+        </article>
+        <article>
+            <h2>Rotació de la llum</h2>
+            <input class="slider" type="range" id="rotation" name="rotation" min="0" max="360" value="360">
+        </article>
+    </section>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

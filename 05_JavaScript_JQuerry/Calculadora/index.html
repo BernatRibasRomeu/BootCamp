@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="theme-switcher">
+            <span>Theme</span>
+            <div class="theme-toggle">
+                <input type="radio" id="theme1" name="theme" checked>
+                <label for="theme1">1</label>
+                <input type="radio" id="theme2" name="theme">
+                <label for="theme2">2</label>
+                <input type="radio" id="theme3" name="theme">
+                <label for="theme3">3</label>
+            </div>
+        </div>
+        <div class="display">
+            <span class="calc-text">calc</span>
+            <div class="screen" id="screen">0</div>
+        </div>
+        <div class="buttons">
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button class="del" id="del">DEL</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="+">+</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="-">-</button>
+            <button data-value=".">.</button>
+            <button data-value="0">0</button>
+            <button data-value="/">/</button>
+            <button data-value="*">x</button>
+            <button class="reset" id="reset">RESET</button>
+            <button class="equals" id="equals">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

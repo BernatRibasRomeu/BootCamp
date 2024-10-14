@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove forma array</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Add Item</legend>
+            <button type="button" id="push" class="button">push</button>
+            <button type="button" id="unshift" class="button">unshift</button>
+            <button type="button" id="insert" class="button">insert at</button>
+            <input type="number" id="insertNum" name="cantidad" min="0" max="10" step="1">
+        </fieldset>
+    </form>
+    <form action="">
+        <fieldset>
+            <legend>Remove Item</legend>
+            <button type="button" id="pop" class="button">pop</button>
+            <button type="button" id="shift" class="button">shift</button>
+            <button type="button" id="remove" class="button">remove at</button>
+            <input type="number" id="removeNum" name="cantidad" min="0" max="10" step="1">
+        </fieldset>
+    </form>
+    <ul id="list"></ul>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
