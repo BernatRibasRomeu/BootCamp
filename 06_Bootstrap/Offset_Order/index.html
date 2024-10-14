@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offset i Order</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row bg-green border border-1 border-dark">head</div>
-        <div class="row bg-blue">
-            <div class="col border border-1 border-dark">1</div>
-            <div class="col border border-1 border-dark">2</div>
+
+<body class="m-2 display-1">
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col bg-green border border-1 border-dark">head</div>
         </div>
-        <div class="row bg-blue">
-            <div class="col border border-1 border-dark">3</div>
-            <div class="col border border-1 border-dark">4</div>
+        <div class="row">
+            <div class="col-md-3 offset-md-3 offset-sm-0 col-sm-3 col-6 bg-blue border border-1 border-dark">1</div>
+            <div class="col-md-3 col-sm-3 col-6 bg-blue border border-1 border-dark">2</div>
+            <div class="w-100 d-none d-md-block"></div>
+            <div class="col-md-3 col-sm-3 col-6 bg-blue border border-1 border-dark">3</div>
+            <div class="col-md-3 col-sm-3 offset-md-6 offset-sm-0 col-6 bg-blue border border-1 border-dark">4</div>
         </div>
-        <div class="row bg-cian border border-1 border-dark">Tablet</div>
-        <div class="row bg-grey">
-            <div class="col border border-1 border-dark">a</div>
-            <div class="col border border-1 border-dark">b</div>
+        <div class="row">
+            <div class="col d-none d-sm-block d-md-none bg-cian border border-1 border-dark">Tablet</div>
         </div>
-        <div class="row bg-grey">
-            <div class="col border border-1 border-dark">c</div>
-            <div class="col border border-1 border-dark">d</div>
+        <div class="row">
+            <div class="col-md-3 order-md-4 order-sm-1 col-sm-3 col-6 bg-grey border border-1 border-dark">a</div>
+            <div class="col-md-3 order-md-3 order-sm-2 col-sm-3 col-6 bg-grey border border-1 border-dark">b</div>
+            <div class="col-md-3 order-md-2 order-sm-3 col-sm-3 col-6 bg-grey border border-1 border-dark">c</div>
+            <div class="col-md-3 order-md-1 order-sm-4 col-sm-3 col-6 bg-grey border border-1 border-dark">d</div>
         </div>
-        <div class="row bg-cian border border-1 border-dark">Desktop</div>
-        <div class="row bg-cian border border-1 border-dark">Mobile</div>
-        <div class="row bg-orange">
-            <div class="col border border-1 border-dark">:(</div>
-            <div class="col border border-1 border-dark">:D</div>
+        <div class="row">
+            <div class="col d-none d-md-block bg-cian border border-1 border-dark">Desktop</div>
         </div>
-        <div class="row bg-green border border-1 border-dark">Footer</div>
+        <div class="row">
+            <div class="col d-sm-none bg-cian border border-1 border-dark">Mobile</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-md-3 col-sm-6 order-sm-2 order-md-1 d-none d-sm-block bg-orange border border-1 border-dark">:(</div>
+            <div class="col-md-3 col-sm-6 order-sm-1 order-md-2 col bg-orange border border-1 border-dark">:D</div>
+        </div>
+        <div class="row">
+            <div class="col bg-green border border-1 border-dark">Footer</div>
+        </div>
     </div>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
