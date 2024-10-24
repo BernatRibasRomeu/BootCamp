@@ -18,3 +18,19 @@ select count(distinct year) as TOTAL from movies;
 select * from movies where title = 'Pulp Fiction';
 -- 10 selecciona la pelicula que tingui id 6
 select * from movies where id = 6;
+-- 11 selecciona totes les pelicules amb una id superior a 3
+select * from movies where id > 3;
+-- 12 selecciona totes les pelicules amb una id menor o igual a 5
+select * from movies where id <= 5;
+-- 13 selecciones les pelicules amb una id entre 3 i 6 fent servir simbols
+select * from movies where id >=3 and id <= 6;
+-- 13 fem el mateix pero amb between
+select * from movies where id between 3 and 6;
+-- 14 selecciona totes les pelicules que no siguin del 2013
+select * from movies where year != 2013;
+-- 15 selecciona totes les pelicules amb any de grabacio 1895, 1994 i 1997
+select * from movies where year in (1895, 1994, 1997);
+-- 16 selecciona totes les pelicules que no siguin dels anys 2013, 2014 i 1994
+select * from movies where year not in (2013, 2014, 1994);
+-- 17 selecciona totes les pelicules grabades l'any 2000 o despres o amb una valoracio de 8,5 o mes
+select * from movies where year >= 2000 or imdb_rating >= 8.5;
