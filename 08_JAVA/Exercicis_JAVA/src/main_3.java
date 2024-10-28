@@ -13,6 +13,5 @@ public class main_3 {
         // Numèric decimal
         float num5 = 56.123456789f;
         double num6 = 12.123456789123456789;
-        // Constants
     }
 }

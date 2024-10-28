@@ -8,5 +8,13 @@ public class main_4 {
         System.out.println(num3);
         long num4 = (long) 9223372036854795807f;
         System.out.println(num4);
+        float num5 = 123.123f;
+        System.out.println(num5);
+        double num6 = 123.456789;
+        System.out.println(num6);
+        char lletra = 'b';
+        System.out.println(lletra);
+        boolean condicio = false;
+        System.out.println(condicio);
     }
 }
