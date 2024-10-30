@@ -1,4 +1,4 @@
-public class main_7 {
+public class unic_print {
     public static void main(String[] args) {
         String nom = "Bernat";
         String cognom1 = "Ribas";

@@ -1,7 +1,7 @@
-public class main_16_2 {
+public class crida_funcions_array {
     public static void main(String[] args) {
         int[] numeros = {1, 3, 4, 6, 8, 9, 12, 14, 15, 18};
-        main_16_2 m = new main_16_2();
+        crida_funcions_array m = new crida_funcions_array();
         System.out.print("Divisibles por 3 usando un for: ");
         m.buscarFor(numeros);
 

@@ -1,4 +1,4 @@
-public class main_6 {
+public class taula_classes {
     public static void main(String[] args) {
                 System.out.printf("%-10s %-10s %-12s %-20s %-40s %n",
                         "Nombre", "Tipo", "Tamaño", "Valor por defecto", "Rango");

@@ -1,5 +1,5 @@
 import  java.util.Scanner;
-public class main_15_2 {
+public class terciari {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Introdueix un numero enter, pot ser negatiu o positiu: ");

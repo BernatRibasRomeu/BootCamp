@@ -1,4 +1,4 @@
-public class main_9 {
+public class cridar_funcions {
     public static void main(String[] args) {
         int numero = 0;
         numero = incrementar(numero);

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class main_14_2 {
+public class elseif_clima {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Introdueix una temperatura: ");
