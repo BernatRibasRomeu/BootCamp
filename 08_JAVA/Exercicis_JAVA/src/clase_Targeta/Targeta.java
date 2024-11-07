@@ -6,22 +6,12 @@ public class Targeta {
 	
 	Scanner scan = new Scanner(System.in);
 	
-	private Targeta targeta;
 	private String emisor = "";
 	private String titular = "";
 	private String iban = "";
 	private String caducitat = "";
 	private double saldo = 1000;
 	private boolean estat = false;
-	
-	public Targeta(String emisor, String titular, String iban, String caducitat) {
-		this.emisor = emisor;
-		this.titular = titular;
-		this.iban = iban;
-		this.caducitat = caducitat;
-	}
-	
-	public Targeta () {}
 
 	public String getEmisor() {
 		return emisor;
@@ -55,63 +45,78 @@ public class Targeta {
 		this.caducitat = caducitat;
 	}
 
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public boolean isEstat() {
+		return estat;
+	}
+
+	public void setEstat(boolean estat) {
+		this.estat = estat;
+	}
+	
 	public void activar() {
-		if (estat) {
-			System.out.print("Vols activar la targeta (si o no)?\nResposta: ");
-			String resposta = scan.next().toLowerCase();
-			switch (resposta) {
-			case "si":
-				estat = true;
-				System.out.println("Targeta activada amb éxit.");
-				break;
-			case "no":
-				System.out.println("La targeta seguirà desactivada.");
-			default:
-				System.out.println("La resposta no es vàlida, sisplau respon si o no.");
-				break;
-			}
-		}
+        if (!estat) {
+            System.out.println("Vols activar la targeta? (si/no): ");
+            String resposta = scan.nextLine().toLowerCase();
+
+            if (resposta.equals("si")) {
+            	setEstat(true);
+                System.out.println("Targeta activada amb èxit.");
+            } else if (resposta.equals("no")) {
+                System.out.println("La targeta no serà activada.");
+            } else {
+            	System.out.println("La resposta no és vàlida.");
+            	}
+        } else {
+            System.out.println("La targeta ja està activada.");
+        }
 	}
 	
 	public void anular () {
-		if (!estat) {
+		if (estat) {
 			System.out.print("Vols desactivar la targeta (si o no)?\nResposta: ");
 			String resposta = scan.next().toLowerCase();
-			switch (resposta) {
-			case "si":
-				System.out.println("Targeta desactivada amb éxit.");
-				estat = false;
-				break;
-			case "no":
-				System.out.println("La targeta seguirà activada.");
-			default:
-				System.out.println("La resposta no es válida, sisplau respon si o no.");
-				break;
-			}
-		}
+			
+			if (resposta.equals("si")) {
+                setEstat(false);
+                System.out.println("Targeta desactivada amb èxit.");
+            } else if (resposta.equals("no")) {
+                System.out.println("La targeta serà desactivada.");
+            } else {
+            	System.out.println("La resposta no és vàlida.");
+            	}
+        } else {
+            System.out.println("La targeta ja està desactivada.");
+        }
 	}
-	public double pagar () {
+	public void pagar () {
 		System.out.println("Quin és l'import del gasto?");
 		double preu = scan.nextDouble();
 		if (saldo >= preu) {
 			double nouSaldo = saldo - preu;
 			System.out.println("El saldo després de l'operació és de " + nouSaldo + "€.");
-			return nouSaldo;
+			setSaldo(nouSaldo);
 		} else {
 			System.out.println("El saldo no és suficient per realitzar la operació.");
-			return saldo;
 		}
 	}
 	
-	public double ingresar() {
+	public void ingresar() {
 		System.out.println("Quin és l'import del ingrés?");
 		double ingres = scan.nextDouble();
 		if(ingres > 0) {
 			double nouSaldo = saldo + ingres;
-			return nouSaldo;
+			System.out.println("El saldo després de l'operació és de " + nouSaldo + "€.");
+			setSaldo(nouSaldo);;
 		} else {
 			System.out.println("No pots fer un ingres de 0 o menys euros.");
-			return saldo;
 		}
 	}
 	
@@ -119,29 +124,23 @@ public class Targeta {
 		System.out.println("El saldo actual de la targeta és de " + saldo + "€.");
 	}
 	
-	public void mostrarInfo (Targeta targeta) {
-		System.out.println("Información de la Targeta:");
-        System.out.println("Emisor: " + emisor);
-        System.out.println("Titular: " + titular);
-        System.out.println("IBAN: " + iban);
-        System.out.println("Caducidad: " + caducitat);
-        System.out.println("Saldo: " + saldo);
-        System.out.println("Estado: " + (estat ? "Activa" : "Inactiva"));
+	public void mostrarInfo() {
+	    System.out.println("Información de la Targeta:");
+	    System.out.println("Emisor: " + getEmisor());
+	    System.out.println("Titular: " + getTitular());
+	    System.out.println("IBAN: " + getIban());
+	    System.out.println("Caducitat: " + getCaducitat());
+	    System.out.println("Saldo: " + getSaldo());
+	    System.out.println("Estat: " + (isEstat() ? "Activa" : "Inactiva"));
+	}
+
+	public Targeta(String emisor, String titular, String iban, String caducitat) {
+		this.emisor = emisor;
+		this.titular = titular;
+		this.iban = iban;
+		this.caducitat = caducitat;
 	}
 	
-	public Object crearTargeta () {
-		System.out.println("Menú de creació de targetes");
-		System.out.print("Introdueix la següent informacio:\n\t"
-				+ "Entitat emisora: ");
-		String entitat = scan.next();
-		System.out.print("Titular de la targeta: ");
-		String nom = scan.next();
-		System.out.print("IBAN: ");
-		String iban = scan.next();
-		System.out.print("Data de caducitat: ");
-		String data_caducitat = scan.next();
-		
-		targeta = new Targeta(entitat, nom, iban, data_caducitat);
-		return targeta;
-	}
+	public Targeta () {}
+
 }
