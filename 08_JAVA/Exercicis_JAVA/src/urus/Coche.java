@@ -1,0 +1,160 @@
+package urus;
+
+public class Coche {
+
+	private String model = "";
+	private String color = "";
+	private int portes = 0;
+	private double km = 0;
+	private int velocitat = 0;
+	private Combustible combustible;
+
+	public Coche(String model, String color, int portes, double km, int velocitat) {
+		super();
+		this.model = model;
+		this.color = color;
+		this.portes = portes;
+		this.km = km;
+		this.velocitat = velocitat;
+		this.combustible = new Combustible();
+	}
+
+	public Coche() {
+		this.combustible = new Combustible();
+	}
+
+	public int acelerar(int velocitat) {
+		int novaVelocitat = velocitat + 33;
+		if (novaVelocitat >= 330) {
+			System.out.println("El Lambo no pot acelerar a més de 330km/h.");
+			novaVelocitat = 330;
+			return novaVelocitat;
+		}
+		return novaVelocitat;
+	}
+
+	public int frenar(int velocitat) {
+		int novaVelocitat = velocitat - 33;
+		if (novaVelocitat <= 0) {
+			System.out.println("El lambo ja no pot frenar més, recorda posar el freno de mà.");
+			novaVelocitat = 0;
+			return novaVelocitat;
+		}
+		return novaVelocitat;
+	}
+
+	public void avisNivellCombustible(int combustible) {
+		if (combustible < 10) {
+			System.out.println("Alerta! El nivell de combustible és menor al 10%.");
+		}
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getPortes() {
+		return portes;
+	}
+
+	public void setPortes(int portes) {
+		this.portes = portes;
+	}
+
+	public double getKm() {
+		return km;
+	}
+
+	public void setKm(double km) {
+		this.km = km;
+	}
+
+	public int getVelocitat() {
+		return velocitat;
+	}
+
+	public void setVelocitat(int velocitat) {
+		this.velocitat = velocitat;
+	}
+	
+	@Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Coche [model = ").append(model)
+          .append(", color = ").append(color)
+          .append(", portes = ").append(portes)
+          .append(", km = ").append(km)
+          .append(", velocitat = ").append(velocitat)
+          .append(", ").append(combustible.toString());
+        
+        sb.append("]");
+        return sb.toString();
+    }
+
+}
+
+//public double recorreDistancia(double distancia, int velocitat) {
+//this.km += distancia;
+//double consumoPor100Km;
+//
+//if (velocitat >= 0 && velocitat <= 50) {
+//	consumoPor100Km = 8;
+//} else if (velocitat > 50 && velocitat <= 120) {
+//	consumoPor100Km = 10;
+//} else if (velocitat > 120 && velocitat <= 200) {
+//	consumoPor100Km = 16;
+//} else if (velocitat > 200 && velocitat <= 330) {
+//	consumoPor100Km = 18;
+//} else {
+//	throw new IllegalArgumentException("velocitat fora de límits (0-330 km/h)");
+//}
+//
+//return (consumoPor100Km * distancia) / 100;
+//}
+
+//class Motor {
+//
+//}
+//
+//class Roda {
+//	
+//}
+
+class Combustible {
+
+	private int nivell;
+
+	public Combustible() {
+		this.nivell = 100;
+	}
+
+	public int getNivell() {
+		return nivell;
+	}
+
+	public void setNivell(int nivell) {
+		this.nivell = nivell;
+	}
+
+	@Override
+	public String toString() {
+		return "Nivell de combustible = " + nivell;
+	}
+
+}
+
+//abstract class componenteCoche extends coche {
+//
+//}
