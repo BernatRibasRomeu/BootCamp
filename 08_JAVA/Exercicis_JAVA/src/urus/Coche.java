@@ -46,12 +46,6 @@ public class Coche {
 		return novaVelocitat;
 	}
 
-	public void avisNivellCombustible(int combustible) {
-		if (combustible < 10) {
-			System.out.println("Alerta! El nivell de combustible és menor al 10%.");
-		}
-	}
-
 	public void recorreDistancia(int distancia, int velocitat) {
 		this.km = this.km + distancia;
 		int nouCombustible = combustible.getNivell() - motor.consumPerKilometre(distancia, velocitat);
@@ -97,48 +91,40 @@ public class Coche {
 	public void setVelocitat(int velocitat) {
 		this.velocitat = velocitat;
 	}
-	
+
 	public void setMotor(Motor motor) {
-	    this.motor = motor;
+		this.motor = motor;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Coche [model = ").append(model).append(", color = ").append(color).append(", portes = ")
-				.append(portes).append(", km = ").append(km).append(", velocitat = ").append(velocitat).append(", ")
-				.append(combustible.toString()).append(", ").append(motor.toString());
-
-		sb.append(".]");
-		return sb.toString();
+//	public void setRodes(Roda[] rodes) {
+//		this.rodes = rodes;
+//	}
+	
+	public void mostrarInfo() {
+		System.out.println("Model: " + model
+				 + ", Color: " +color
+				 + ", Portes: " + portes
+				 + ", Km: " + km
+				 + ", Velocitat: " + velocitat
+				 + ", " + combustible.toString());
 	}
 
 }
 
-class Motor {
+class Motor extends componentesCoche {
 
-	private String tipoMotor = "";
-	private int caballs = 0;
-	private int consumMitja = 0;
+    private int caballs;
+    private int consumMitja;
 
-	public Motor(String tipoMotor, int caballs, int consumMitja) {
-		super();
-		this.tipoMotor = tipoMotor;
-		this.caballs = caballs;
-		this.consumMitja = consumMitja;
-	}
+    public Motor(String marca, String model, int caballs, int consumMitja) {
+        super(marca, model);
+        this.caballs = caballs;
+        this.consumMitja = consumMitja;
+    }
 
-	public Motor() {
-
-	}
-
-	public String getTipoMotor() {
-		return tipoMotor;
-	}
-
-	public void setTipoMotor(String tipoMotor) {
-		this.tipoMotor = tipoMotor;
-	}
+    public Motor() {
+        super();
+    }
 
 	public int getCaballs() {
 		return caballs;
@@ -174,23 +160,51 @@ class Motor {
 
 		return (consumoPor100Km * distancia) / 100;
 	}
-	
+
 	@Override
-	public String toString() {
-		return "TipoMotor = " + tipoMotor + ", Caballs = " + caballs + "CV" + ", ConsumMitja = " + consumMitja + " litres cada 100km";
-	}
+    public void mostrarInfo() {
+        System.out.println("Motor Marca: " + marca + ", Model: " + model + ", Caballs: " + caballs + "CV, Consum MItjà: " + consumMitja + " L/100km");
+    }
 }
 
-class Roda {
+class Roda extends componentesCoche {
 
+    private int ample;
+
+    public Roda(String marca, String model, int ample) {
+        super(marca, model);
+        this.ample = ample;
+    }
+
+    public Roda() {
+        super();
+    }
+
+	public int getAmple() {
+		return ample;
+	}
+
+	public void setAmple(int ample) {
+		this.ample = ample;
+	}
+
+	@Override
+    public void mostrarInfo() {
+        System.out.println("Roda Marca: " + marca + ", Model: " + model + ", Ample: " + ample);
+    }
 }
 
 class Combustible {
 
-	private int nivell;
+	private int nivell = 100;
+
+	public Combustible(int nivell) {
+		super();
+		this.nivell = nivell;
+	}
 
 	public Combustible() {
-		this.nivell = 100;
+
 	}
 
 	public int getNivell() {
@@ -201,6 +215,23 @@ class Combustible {
 		this.nivell = nivell;
 	}
 
+	public void avisNivellCombustible(int combustible) {
+		if (combustible < 10) {
+			System.out.println("Alerta! El nivell de combustible és menor al 10%.");
+		}
+	}
+
+	public void repostarCombustible(int repostat) {
+		int nouNivell = getNivell() + repostat;
+		if (nouNivell < 0) {
+			setNivell(0);
+		} else if (nouNivell >= 100) {
+			setNivell(100);
+		} else {
+			setNivell(nouNivell);
+		}
+	}
+
 	@Override
 	public String toString() {
 		return "Nivell de combustible = " + nivell;
@@ -208,6 +239,33 @@ class Combustible {
 
 }
 
-//abstract class componentesCoche{
-//
-//}
+abstract class componentesCoche {
+    protected String marca;
+    protected String model;
+
+    public componentesCoche() {
+    }
+
+    public componentesCoche(String marca, String model) {
+        this.marca = marca;
+        this.model = model;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public abstract void mostrarInfo();
+}
