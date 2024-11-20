@@ -1,20 +1,24 @@
 package com.exemple.json;
 
 public class TextToJSON {
-	String msg = "";
-
-	public String getMsg() {
-		return msg;
+	String nom = "";
+	String cognom = "";
+	public String getNom() {
+		return nom;
 	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-
-	public TextToJSON(String msg) {
-		this.msg = msg;
+	public String getCognom() {
+		return cognom;
 	}
-	
+	public void setCognom(String cognom) {
+		this.cognom = cognom;
+	}
+	public TextToJSON(String nom, String cognom) {
+		this.nom = nom;
+		this.cognom = cognom;
+	}
 	public TextToJSON() {}
 	
 }
