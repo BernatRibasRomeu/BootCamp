@@ -16,18 +16,18 @@ public class UsersControllers {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public List<String> getAllUsers() {
-		final String QUERY1 = "SELECT * FROM users;";
-
-		List<Map<String, Object>> results = jdbcTemplate.queryForList(QUERY1);
-
-		List<String> userList = new ArrayList<String>();
-
-		for (Map<String, Object> row : results) {
-			userList.add(row.toString());
-		}
-
-		return userList;
-	}
+//	@RequestMapping(value = "/users", method = RequestMethod.GET)
+//	public List<String> getAllUsers() {
+//		final String QUERY1 = "SELECT * FROM users;";
+//
+//		List<Map<String, Object>> results = jdbcTemplate.queryForList(QUERY1);
+//
+//		List<String> userList = new ArrayList<String>();
+//
+//		for (Map<String, Object> row : results) {
+//			userList.add(row.toString());
+//		}
+//
+//		return userList;
+//	}
 }
