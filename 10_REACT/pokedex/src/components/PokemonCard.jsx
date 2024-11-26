@@ -5,7 +5,6 @@ function PokemonCard({ pokemonId }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Llama a la PokeAPI
         const fetchPokemon = async () => {
             try {
                 const response = await fetch(
@@ -26,41 +25,27 @@ function PokemonCard({ pokemonId }) {
         fetchPokemon();
     }, [pokemonId]);
 
-    if (loading) return <p>Cargando...</p>;
+    if (loading) return <p className="text-center">Cargando...</p>;
 
-    if (!pokemon) return <p>Error al cargar el Pokémon.</p>;
+    if (!pokemon) return <p className="text-center">Error al cargar el Pokémon.</p>;
 
-    // Extraemos los datos necesarios
     const { id, name, sprites, types } = pokemon;
 
     return (
-        <div style={styles.card}>
-            <h2>
+        <div className="border border-gray-300 rounded-lg shadow-md p-4 text-center">
+            <h2 className="text-lg font-bold">
                 #{id} {name.charAt(0).toUpperCase() + name.slice(1)}
             </h2>
-            <img src={sprites.front_default} alt={name} style={styles.image} />
-            <p>
+            <img
+                src={sprites.front_default}
+                alt={name}
+                className="w-24 h-24 mx-auto"
+            />
+            <p className="text-sm">
                 <strong>Tipo:</strong> {types.map((t) => t.type.name).join(", ")}
             </p>
         </div>
     );
 }
-
-// Estilos en línea para la carta
-const styles = {
-    card: {
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "16px",
-        textAlign: "center",
-        width: "200px",
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-        margin: "16px auto",
-    },
-    image: {
-        width: "100px",
-        height: "100px",
-    },
-};
 
 export default PokemonCard;
