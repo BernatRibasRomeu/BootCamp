@@ -57,7 +57,7 @@ function PokemonSearch() {
                     </option>
                 ))}
             </select>
-
+{/* hola */}
             <ul className="list-disc pl-5">
                 {pokemonList.map((pokemon) => (
                     <li key={pokemon.name}>{pokemon.name}</li>
